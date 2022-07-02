@@ -1,4 +1,4 @@
-package com.mycrm.backendcrm;
+package com.mycrm.backend.core;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

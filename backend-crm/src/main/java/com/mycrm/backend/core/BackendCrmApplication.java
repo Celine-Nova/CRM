@@ -1,4 +1,4 @@
-package com.mycrm.backendcrm;
+package com.mycrm.backend.core;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
