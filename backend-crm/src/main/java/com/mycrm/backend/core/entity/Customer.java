@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name="customer")
+@Table(name="customers")
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -20,25 +20,25 @@ public class Customer {
     @Column(name = "city", nullable = false, length = 100)
     private String city;
 
-    @Column(name = "company_name", length = 100)
+    @Column(name = "companyName", length = 100)
     private String companyName;
 
     @Column(name = "country", length = 100)
     private String country;
 
-    @Column(name = "email",  length = 100)
+    @Column(name = "email", length = 100)
     private String email;
 
-    @Column(name = "first_name", length = 100)
+    @Column(name = "firstName", length = 100)
     private String firstName;
 
-    @Column(name = "last_name", length = 100)
+    @Column(name = "lastName", length = 100)
     private String lastName;
 
     @Column(name = "phone", length = 20)
     private String phone;
 
-    @Column(name = "zip_code", length = 12)
+    @Column(name = "zipCode", length = 12)
     private String zipCode;
 
     // attribut state de l'enum CustomerState
@@ -47,7 +47,7 @@ public class Customer {
     @Enumerated(EnumType.ORDINAL) // => Renvoie Integer
     private CustomerState state;
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer") // => Au singulier car il mappe sur la propriété customer de l'intité Order
     private List<Order> orders;
 
     public Customer() {
