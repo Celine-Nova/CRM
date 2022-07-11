@@ -13,33 +13,25 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-
+    @Column(name = "company_name", length = 100)
+    private String companyName;
+    @Column(name = "first_name", length = 100)
+    private String firstName;
+    @Column(name = "last_name", length = 100)
+    private String lastName;
+    @Column(name = "email", length = 100)
+    private String email;
+    @Column(name = "phone", length = 20)
+    private String phone;
     @Column(name = "address", nullable = false, length = 255)
     private String address;
-
+    @Column(name = "zip_code", length = 12)
+    private String zipCode;
     @Column(name = "city", nullable = false, length = 100)
     private String city;
 
-    @Column(name = "companyName", length = 100)
-    private String companyName;
-
     @Column(name = "country", length = 100)
     private String country;
-
-    @Column(name = "email", length = 100)
-    private String email;
-
-    @Column(name = "firstName", length = 100)
-    private String firstName;
-
-    @Column(name = "lastName", length = 100)
-    private String lastName;
-
-    @Column(name = "phone", length = 20)
-    private String phone;
-
-    @Column(name = "zipCode", length = 12)
-    private String zipCode;
 
     // attribut state de l'enum CustomerState
     @Column(name="state", nullable = false, columnDefinition = "INT(1) DEFAULT '0'") // => Sql type Integer valeur par default 0 == INACTIVE

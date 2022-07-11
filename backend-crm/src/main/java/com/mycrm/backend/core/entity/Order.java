@@ -10,26 +10,23 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", length = 11)
     private Long id;
-
+    @Column(name="type_presta", length = 100)
+    private String typePresta;
     @Column(name= "designation", nullable = false, length = 100)
     private String designation;
-
-    @Column(name = "nbDays", length = 11)
+    @Column(name="unit_price",precision = 9, scale = 2)
+    private Double unitPrice;
+    @Column(name = "nb_days", length = 11)
     private int nbDays;
 
-//    @Column(name="totalexcludetaxe",precision = 9, scale = 2)
-//    private Double totalExcludeTaxe;
+    @Column(name="total_exclude_taxe",precision = 9, scale = 2)
+    private Double totalExcludeTaxe;
 
     // precision nombre de chiffre au total
     // scale nombre de chiffre après la virgule
-//    @Column(name="totalincludetaxe", precision = 9, scale = 2)
-//    private Double totalWithTaxe;
+    @Column(name="total_with_taxe", precision = 9, scale = 2)
+    private Double totalWithTaxe;
 
-    @Column(name="typePresta", length = 100)
-    private String typePresta;
-
-    @Column(name="unitPrice",precision = 9, scale = 2)
-    private Double unitPrice;
 
     @Column(name="state", nullable = false, columnDefinition = "INT(1) DEFAULT '0'") // => Sql type Integer valeur par default 0 == INACTIVE
     // ou @ColumnDefault("0")
@@ -76,21 +73,21 @@ public class Order {
         this.nbDays = nbDays;
     }
 
-//    public Double getTotalExcludeTaxe() {
-//        return totalExcludeTaxe;
-//    }
-//
-//    public void setTotalExcludeTaxe(Double totalExcludeTaxe) {
-//        this.totalExcludeTaxe = totalExcludeTaxe;
-//    }
+    public Double getTotalExcludeTaxe() {
+        return totalExcludeTaxe;
+    }
 
-//    public Double getTotalWithTaxe() {
-//        return totalWithTaxe;
-//    }
-//
-//    public void setTotalWithTaxe(Double totalWithTaxe) {
-//        this.totalWithTaxe = totalWithTaxe;
-//    }
+    public void setTotalExcludeTaxe(Double totalExcludeTaxe) {
+        this.totalExcludeTaxe = totalExcludeTaxe;
+    }
+
+    public Double getTotalWithTaxe() {
+        return totalWithTaxe;
+    }
+
+    public void setTotalWithTaxe(Double totalWithTaxe) {
+        this.totalWithTaxe = totalWithTaxe;
+    }
 
     public String getTypePresta() {
         return typePresta;
@@ -122,8 +119,8 @@ public class Order {
                 "id=" + id +
                 ", designation='" + designation + '\'' +
                 ", nbDays=" + nbDays +
-//                ", totalExcludeTaxe=" + totalExcludeTaxe +
-//                ", totalWithTaxe=" + totalWithTaxe +
+                ", totalExcludeTaxe=" + totalExcludeTaxe +
+                ", totalWithTaxe=" + totalWithTaxe +
                 ", typePresta='" + typePresta + '\'' +
                 ", unitPrice=" + unitPrice +
                 '}';
